@@ -15,9 +15,35 @@ def pets_sold (shop)
 end
 
 def increase_pets_sold(shop, sales)
-  shop[:admin][:pets_sold]+=sales
+  return shop[:admin][:pets_sold]+=sales
 end
 
 def stock_count(shop)
   return shop[:pets].count
 end
+
+def pets_by_breed(shop, breed)
+
+same_breed = []
+
+  for pet in shop[:pets]
+    if pet[:breed] == breed
+      same_breed.push(pet)
+    end
+  end
+
+ return same_breed
+end 
+
+# def pets_by_breed(array, breed)
+
+# breed_array = []
+
+#  for pet in array[:pets]
+#    if pet[:breed] == breed
+#      breed_array.push(pet)
+#    end
+#  end
+
+#  return breed_array
+# end
