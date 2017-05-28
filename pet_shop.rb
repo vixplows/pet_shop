@@ -33,17 +33,5 @@ same_breed = []
   end
 
  return same_breed
-end 
+end
 
-# def pets_by_breed(array, breed)
-
-# breed_array = []
-
-#  for pet in array[:pets]
-#    if pet[:breed] == breed
-#      breed_array.push(pet)
-#    end
-#  end
-
-#  return breed_array
-# end
