@@ -81,15 +81,13 @@ def customer_can_afford_pet(customer, new_pet)
   return true if customer[:cash] >= new_pet[:price]
 end
 
-# Optional 3 and 4
+# Optional 3, 4 and 5
 def sell_pet_to_customer(shop, pet, customer)
   
-  if pet == nil
-  end
-
-  if pet
+  if pet && customer[:cash] >= pet[:price]
     customer[:pets] << shop[:pet]
     shop[:admin][:pets_sold] += customer[:pets].count
     shop[:admin][:total_cash] += pet[:price]
-  end 
+  end
+
 end
