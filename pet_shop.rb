@@ -56,9 +56,10 @@ end
 def remove_pet_by_name(shop, name) 
 
   for pet in shop[:pets]
-    shop[:pets].delete_at(shop[:pets].index(pet)) if pet[:name] == name
+    if pet[:name] == name
+      shop[:pets].delete(pet) 
+    end
   end
-
 end
 
 # 13
@@ -80,4 +81,11 @@ end
 def customer_can_afford_pet(customer, new_pet)
   return false if customer[:cash] < new_pet[:price]
   return true if customer[:cash] >= new_pet[:price]
+end
+
+# Optional 3
+def sell_pet_to_customer(shop, pet, customer)
+  customer[:pets] << shop[:pet]
+  shop[:admin][:pets_sold] += customer[:pets].count
+  shop[:admin][:total_cash] += pet[:price]
 end
