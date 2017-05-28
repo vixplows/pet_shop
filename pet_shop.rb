@@ -55,26 +55,16 @@ end
 # 12
 def remove_pet_by_name(shop, name) 
 
-  # for pet in shop[:pets]
-  #   shop[:pets].delete_at(shop[:pets].index(pet)) if pet[:name] == name
-  # end
-
-## could make it more explicit e.g. get me current index of pet then delete at that index..
-
-  shop[:pets].each do |pet|
-    if pet[:name] == name
-      shop[:pets].delete_at(shop[:pets].index(pet))
-    end
+  for pet in shop[:pets]
+    shop[:pets].delete_at(shop[:pets].index(pet)) if pet[:name] == name
   end
+
 end
 
-
-# def test_remove_pet_by_name
-#   remove_pet_by_name(@pet_shop, "Arthur")
-#   pet = find_pet_by_name(@pet_shop,"Arthur")
-#   assert_nil(pet)
-# end
-
+# 13
+def add_pet_to_stock(shop, new_pet)
+  return shop[:pets] << new_pet
+end
 
 # #13
 # def add_pet_to_stock(shop, new_pet_name)
