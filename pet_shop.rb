@@ -31,7 +31,7 @@ end
 # 8 and 9
 def pets_by_breed(shop, breed)
 
-same_breed = []
+  same_breed = []
 
   for pet in shop[:pets]
     if pet[:breed] == breed
@@ -66,7 +66,8 @@ def add_pet_to_stock(shop, new_pet)
   return shop[:pets] << new_pet
 end
 
-# #13
-# def add_pet_to_stock(shop, new_pet_name)
+# 14
+def customer_pet_count(customers)
+  return customers[:pets].count
+end
 
-# end
